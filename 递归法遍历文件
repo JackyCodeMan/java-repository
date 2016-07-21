@@ -1,0 +1,14 @@
+public static void listFile(File file){
+    if(file!=null){
+        if(file.isDirectory()){    //是目录
+            File f[]=file.listFiles();    //遍历目录
+            if(f!=null){
+                for(int i=0;i<f.length;i++){
+                    listFile(f[i]);    //递归调用
+                }
+            }
+        }else{    //是文件
+            System.out.println("file");
+        }
+    }
+}
